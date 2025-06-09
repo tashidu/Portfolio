@@ -140,6 +140,7 @@ export const skills = {
     { name: "Firebase", level: 80 },
     { name: "Docker", level: 75 },
     { name: "Git", level: 90 },
+    { name: "GitHub", level: 88 },
     { name: "Figma", level: 70 }
   ],
 
