@@ -65,7 +65,7 @@ const Footer = () => {
           >
             <h4 className="text-lg font-semibold text-white">Quick Links</h4>
             <ul className="space-y-2">
-              {quickLinks.map((link, index) => (
+              {quickLinks.map((link) => (
                 <li key={link.name}>
                   <motion.a
                     href={link.href}

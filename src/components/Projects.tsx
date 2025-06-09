@@ -201,7 +201,7 @@ const Projects = () => {
               { label: 'Technologies Used', value: '15+' },
               { label: 'Years of Experience', value: '3+' },
               { label: 'Lines of Code', value: '50K+' },
-            ].map((stat, index) => (
+            ].map((stat) => (
               <motion.div
                 key={stat.label}
                 variants={itemVariants}

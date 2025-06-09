@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
+// import { gsap } from 'gsap';
 import { FiGithub, FiLinkedin, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 import { SiSalesforce } from 'react-icons/si';
 import { personalInfo } from '../data/portfolio';

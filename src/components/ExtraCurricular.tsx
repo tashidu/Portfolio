@@ -157,7 +157,7 @@ const ExtraCurricular = () => {
               { label: 'Organizations', value: '5', icon: FiUsers },
               { label: 'Years Active', value: '3+', icon: FiCalendar },
               { label: 'Projects Led', value: '4', icon: FiTrendingUp },
-            ].map((stat, index) => (
+            ].map((stat) => (
               <motion.div
                 key={stat.label}
                 variants={itemVariants}

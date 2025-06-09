@@ -163,7 +163,7 @@ const Achievements = () => {
               { icon: FiTarget, label: 'Certifications', value: '2+', color: 'from-blue-500 to-blue-700' },
               { icon: FiTrendingUp, label: 'Hackathons', value: '3+', color: 'from-green-500 to-green-700' },
               { icon: FiAward, label: 'Recognition', value: '5+', color: 'from-purple-500 to-purple-700' },
-            ].map((stat, index) => (
+            ].map((stat) => (
               <motion.div
                 key={stat.label}
                 variants={itemVariants}
