@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { softSkills } from '../data/portfolio';
-import profileImage from '../assets/my.jpg';
+// Using public folder image path for better Vercel compatibility
+const profileImage = '/my.jpg';
 
 const About = () => {
   const [ref, inView] = useInView({

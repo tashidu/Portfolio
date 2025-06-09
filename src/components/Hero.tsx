@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 import { SiSalesforce } from 'react-icons/si';
 import { personalInfo } from '../data/portfolio';
-import profileImage from '../assets/my.jpg';
+// Using public folder image path for better Vercel compatibility
+const profileImage = '/my.jpg';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);

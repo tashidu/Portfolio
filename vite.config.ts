@@ -16,9 +16,8 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: false, // Disable for better performance
-    minify: 'terser',
-    copyPublicDir: true, // Explicitly copy public directory
+    sourcemap: false,
+    copyPublicDir: true,
     rollupOptions: {
       output: {
         manualChunks: {
