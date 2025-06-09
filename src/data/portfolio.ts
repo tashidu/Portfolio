@@ -143,11 +143,11 @@ export const skills = {
     { name: "Figma", level: 70 }
   ],
 
-  "Cloud & AI": [
-    { name: "Experience Cloud", level: 75 },
-    { name: "Machine Learning", level: 75 },
-    { name: "Weather API Integration", level: 80 },
-    { name: "Google Maps API", level: 78 }
+  "Machine Learning & Data Science": [
+    { name: "Scikit-learn", level: 80 },
+    { name: "Pandas / NumPy", level: 85 },
+    { name: "TensorFlow", level: 75 },
+    { name: "Hugging Face Transformers", level: 70 }
   ]
 };
 

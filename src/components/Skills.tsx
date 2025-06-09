@@ -72,10 +72,10 @@ const Skills = () => {
       'Git': '📝',
       'Figma': '🎨',
 
-      'Experience Cloud': '🌐',
-      'Machine Learning': '🤖',
-      'Weather API Integration': '🌤️',
-      'Google Maps API': '🗺️',
+      'Scikit-learn': '🔬',
+      'Pandas / NumPy': '🐼',
+      'TensorFlow': '🧠',
+      'Hugging Face Transformers': '🤗',
     };
     return icons[skillName] || '💻';
   };
