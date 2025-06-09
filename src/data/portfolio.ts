@@ -142,14 +142,7 @@ export const skills = {
     { name: "Git", level: 90 },
     { name: "Figma", level: 70 }
   ],
-  "Salesforce Platform": [
-    { name: "Salesforce Platform", level: 85 },
-    { name: "Apex Programming", level: 82 },
-    { name: "Lightning Web Components (LWC)", level: 85 },
-    { name: "Salesforce APIs", level: 80 },
-    { name: "SOQL / SOSL", level: 78 },
-    { name: "Custom Metadata & Custom Objects", level: 80 }
-  ],
+
   "Cloud & AI": [
     { name: "Experience Cloud", level: 75 },
     { name: "Machine Learning", level: 75 },

@@ -71,12 +71,7 @@ const Skills = () => {
       'Docker': '🐳',
       'Git': '📝',
       'Figma': '🎨',
-      'Salesforce Platform': '☁️',
-      'Apex Programming': '⚡',
-      'Lightning Web Components (LWC)': '⚡',
-      'Salesforce APIs': '🔗',
-      'SOQL / SOSL': '🔍',
-      'Custom Metadata & Custom Objects': '🏗️',
+
       'Experience Cloud': '🌐',
       'Machine Learning': '🤖',
       'Weather API Integration': '🌤️',
