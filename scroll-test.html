@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Test</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            /* Test different scroll behaviors */
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .section:nth-child(odd) {
+            background: linear-gradient(135deg, #1e293b, #334155);
+        }
+        
+        .section:nth-child(even) {
+            background: linear-gradient(135deg, #334155, #475569);
+        }
+        
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .nav button {
+            display: block;
+            margin: 5px 0;
+            padding: 10px 15px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .nav button:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <button onclick="scrollToSection(1)">Section 1</button>
+        <button onclick="scrollToSection(2)">Section 2</button>
+        <button onclick="scrollToSection(3)">Section 3</button>
+        <button onclick="scrollToSection(4)">Section 4</button>
+        <button onclick="scrollToSection(5)">Section 5</button>
+    </div>
+
+    <div class="section" id="section1">
+        <h1>Section 1 - Test Normal Scrolling</h1>
+    </div>
+    
+    <div class="section" id="section2">
+        <h1>Section 2 - Scroll with Mouse Wheel</h1>
+    </div>
+    
+    <div class="section" id="section3">
+        <h1>Section 3 - Try Scroll Bar</h1>
+    </div>
+    
+    <div class="section" id="section4">
+        <h1>Section 4 - Test Touch Scroll</h1>
+    </div>
+    
+    <div class="section" id="section5">
+        <h1>Section 5 - All Working?</h1>
+    </div>
+
+    <script>
+        function scrollToSection(num) {
+            document.getElementById('section' + num).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // Test scroll performance
+        let scrolling = false;
+        window.addEventListener('scroll', () => {
+            if (!scrolling) {
+                console.log('Scroll event fired - performance OK');
+                scrolling = true;
+                setTimeout(() => {
+                    scrolling = false;
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>
