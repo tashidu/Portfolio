@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 import { SiSalesforce } from 'react-icons/si';
 import { personalInfo } from '../data/portfolio';
+import profileImage from '../assets/my.jpg';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -168,7 +169,7 @@ const Hero = () => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <img
-                    src="/my.jpg"
+                    src={profileImage}
                     alt="Tashidu Vinuka - Software Engineer"
                     className="w-full h-full object-cover object-center"
                     onError={(e) => {

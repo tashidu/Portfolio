@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { softSkills } from '../data/portfolio';
+import profileImage from '../assets/my.jpg';
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -60,7 +61,7 @@ const About = () => {
               >
                 <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary-500/30 shadow-xl">
                   <img
-                    src="/my.jpg"
+                    src={profileImage}
                     alt="Tashidu Vinuka"
                     className="w-full h-full object-cover object-center"
                     onError={(e) => {
