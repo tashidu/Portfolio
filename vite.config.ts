@@ -18,6 +18,7 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false, // Disable for better performance
     minify: 'terser',
+    copyPublicDir: true, // Explicitly copy public directory
     rollupOptions: {
       output: {
         manualChunks: {
@@ -30,4 +31,6 @@ export default defineConfig({
   optimizeDeps: {
     include: ['react', 'react-dom', 'framer-motion'],
   },
+  // Ensure public assets are copied
+  publicDir: 'public',
 })
