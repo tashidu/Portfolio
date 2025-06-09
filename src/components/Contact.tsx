@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiMail, FiPhone, FiMapPin, FiSend, FiUser, FiMessageSquare, FiCheck, FiX } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { SiSalesforce } from 'react-icons/si';
 import emailjs from '@emailjs/browser';
@@ -203,54 +203,48 @@ const Contact = () => {
 
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-bold text-primary-400 mb-6">
-                Send Me a Message
-              </h3>
-              
               <form onSubmit={handleSubmit} className="space-y-6">
+                <h3 className="text-2xl font-bold text-primary-400 mb-6">
+                  Send Message
+                </h3>
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                      Your Name
+                      Name *
                     </label>
-                    <div className="relative">
-                      <FiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="w-full pl-10 pr-4 py-3 bg-dark-700/50 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-primary-500 focus:outline-none transition-colors duration-300"
-                        placeholder="Enter your name"
-                        required
-                      />
-                    </div>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all duration-300"
+                      placeholder="Your Name"
+                    />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                      Your Email
+                      Email *
                     </label>
-                    <div className="relative">
-                      <FiMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full pl-10 pr-4 py-3 bg-dark-700/50 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-primary-500 focus:outline-none transition-colors duration-300"
-                        placeholder="Enter your email"
-                        required
-                      />
-                    </div>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all duration-300"
+                      placeholder="your.email@example.com"
+                    />
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                    Subject
+                    Subject *
                   </label>
                   <input
                     type="text"
@@ -258,62 +252,52 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-dark-700/50 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-primary-500 focus:outline-none transition-colors duration-300"
-                    placeholder="What's this about?"
                     required
+                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all duration-300"
+                    placeholder="What's this about?"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                    Message
+                    Message *
                   </label>
-                  <div className="relative">
-                    <FiMessageSquare className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      rows={6}
-                      className="w-full pl-10 pr-4 py-3 bg-dark-700/50 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-primary-500 focus:outline-none transition-colors duration-300 resize-none"
-                      placeholder="Tell me about your project or just say hello!"
-                      required
-                    />
-                  </div>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={6}
+                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all duration-300 resize-none"
+                    placeholder="Tell me about your project or just say hello!"
+                  />
                 </div>
 
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full btn-primary flex items-center justify-center space-x-2 ${
-                    isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
-                  }`}
-                  whileHover={!isSubmitting ? { scale: 1.02 } : {}}
-                  whileTap={!isSubmitting ? { scale: 0.98 } : {}}
+                  className="w-full bg-gradient-to-r from-primary-500 to-primary-700 text-white font-semibold py-4 px-8 rounded-lg hover:from-primary-600 hover:to-primary-800 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   {isSubmitting ? (
-                    <>
+                    <div className="flex items-center justify-center space-x-2">
                       <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                       <span>Sending...</span>
-                    </>
+                    </div>
                   ) : (
-                    <>
-                      <FiSend className="w-5 h-5" />
-                      <span>Send Message</span>
-                    </>
+                    'Send Message'
                   )}
                 </motion.button>
 
-                {/* Success/Error Messages */}
                 {submitStatus === 'success' && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center space-x-2 text-green-400 bg-green-400/10 border border-green-400/20 rounded-lg p-3"
+                    className="p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-center"
                   >
-                    <FiCheck className="w-5 h-5" />
-                    <span>Message sent successfully! I'll get back to you soon.</span>
+                    ✅ Message sent successfully! I'll get back to you soon.
                   </motion.div>
                 )}
 
@@ -321,10 +305,9 @@ const Contact = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center space-x-2 text-red-400 bg-red-400/10 border border-red-400/20 rounded-lg p-3"
+                    className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-center"
                   >
-                    <FiX className="w-5 h-5" />
-                    <span>Failed to send message. Please try again or contact me directly.</span>
+                    ❌ Failed to send message. Please try again or contact me directly.
                   </motion.div>
                 )}
               </form>
